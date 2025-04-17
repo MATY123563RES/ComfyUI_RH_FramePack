@@ -1,9 +1,13 @@
 # FramePack for ComfyUI
 
 ## Online Access
-You can also access RunningHub online to use this plugin and model for free.
-Run&Download this Workflow: 
-https://www.runninghub.ai/post/1912930457355517954
+You can access RunningHub online to use this plugin and models for free:
+### English Version
+- **Run & Download Workflow**:  
+  [https://www.runninghub.ai/post/1912930457355517954](https://www.runninghub.ai/post/1912930457355517954)
+### 中文版本
+- **运行并下载工作流**:  
+  [https://www.runninghub.cn/post/1912930457355517954](https://www.runninghub.cn/post/1912930457355517954)
 
 ## Features  
 This is a simple implementation of https://github.com/lllyasviel/FramePack. If there are any advantages, they would be:  

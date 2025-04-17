@@ -12,8 +12,11 @@ This is a simple implementation of https://github.com/lllyasviel/FramePack. If t
 
 ## Model Configuration in the models dir:
 - hunyuan_root = '/workspace/comfyui/models/HunyuanVideo'
+  https://huggingface.co/hunyuanvideo-community/HunyuanVideo/tree/main
 - flux_redux_bfl_root = '/workspace/comfyui/models/flux_redux_bfl'
+  https://huggingface.co/lllyasviel/flux_redux_bfl/tree/main
 - framePackI2V_root = '/workspace/comfyui/models/FramePackI2V_HY'
+  https://huggingface.co/lllyasviel/FramePackI2V_HY/tree/main
 ```
 flux_redux_bfl
 ├── feature_extractor

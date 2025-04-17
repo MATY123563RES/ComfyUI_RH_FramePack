@@ -42,6 +42,8 @@ class Kiki_FramePack:
                 # "n_prompt": ("STRING", {"multiline": True}),
                 "total_second_length": ("INT", {"default": 5, "min": 1, "max": 120, "step": 1}),
                 "seed": ("INT", {"default": 3407}),
+                "steps": ("INT", {"default": 25, "min": 1, "max": 100, "step": 1}),
+                "use_teacache": ("BOOLEAN", {"default": True}),
             },
         }
 
@@ -113,13 +115,15 @@ class Kiki_FramePack:
         image_np = self.preprocess_image(image)
         prompt = kwargs['prompt']
         seed = kwargs['seed']
-        total_second_length = kwargs['total_second_length'] 
+        total_second_length = kwargs['total_second_length']
+        steps = kwargs['steps']
+        use_teacache = kwargs['use_teacache']
         random_str = ''.join(random.choices(string.ascii_letters + string.digits, k=16))
         video_path = os.path.join(folder_paths.get_output_directory(), f'{random_str}.mp4')
 
-        self.pbar = comfy.utils.ProgressBar(25 * total_second_length)
+        self.pbar = comfy.utils.ProgressBar(steps * total_second_length)
 
-        self.exec(input_image=image_np, prompt=prompt, seed=seed, total_second_length=total_second_length, video_path=video_path)
+        self.exec(input_image=image_np, prompt=prompt, seed=seed, total_second_length=total_second_length, video_path=video_path, steps=steps, use_teacache=use_teacache)
         if os.path.exists(video_path):
             fps = self.get_fps_with_torchvision(video_path)
             frames = self.extract_frames_as_pil(video_path)

@@ -71,4 +71,6 @@ HunyuanVideo
     ├── config.json
     └── diffusion_pytorch_model.safetensors
 ```
+## Example:
+![image](https://github.com/user-attachments/assets/ea936caf-c0ca-48f4-af20-64090771d382)
 

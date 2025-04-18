@@ -44,6 +44,7 @@ class Kiki_FramePack:
                 "seed": ("INT", {"default": 3407}),
                 "steps": ("INT", {"default": 25, "min": 1, "max": 100, "step": 1}),
                 "use_teacache": ("BOOLEAN", {"default": True}),
+                "upscale": ("FLOAT", {"default": 1.0, "min": 0.1, "max": 2.0, "step": 0.1, "description": "Resolution scaling factor. 1.0 = original size, >1.0 = upscale, <1.0 = downscale"}),
             },
         }
 
@@ -118,12 +119,13 @@ class Kiki_FramePack:
         total_second_length = kwargs['total_second_length']
         steps = kwargs['steps']
         use_teacache = kwargs['use_teacache']
+        upscale = kwargs['upscale']
         random_str = ''.join(random.choices(string.ascii_letters + string.digits, k=16))
         video_path = os.path.join(folder_paths.get_output_directory(), f'{random_str}.mp4')
 
         self.pbar = comfy.utils.ProgressBar(steps * total_second_length)
 
-        self.exec(input_image=image_np, prompt=prompt, seed=seed, total_second_length=total_second_length, video_path=video_path, steps=steps, use_teacache=use_teacache)
+        self.exec(input_image=image_np, prompt=prompt, seed=seed, total_second_length=total_second_length, video_path=video_path, steps=steps, use_teacache=use_teacache, scale=upscale)
         if os.path.exists(video_path):
             fps = self.get_fps_with_torchvision(video_path)
             frames = self.extract_frames_as_pil(video_path)
@@ -144,7 +146,8 @@ class Kiki_FramePack:
             gs=32, 
             rs=0, 
             gpu_memory_preservation=6, 
-            use_teacache=True):
+            use_teacache=True,
+            scale=1.0):
         
         total_latent_sections = (total_second_length * 30) / (latent_window_size * 4)
         total_latent_sections = int(max(round(total_latent_sections), 1))
@@ -181,7 +184,6 @@ class Kiki_FramePack:
             H, W, C = input_image.shape
             height, width = find_nearest_bucket(H, W, resolution=640)
             print(f"Resized height: {height}, Resized width: {width}")  # Print resized dimensions 
-            scale = 1.2
             def strict_align(h, w, scale):
                 raw_h = h * scale
                 raw_w = w * scale

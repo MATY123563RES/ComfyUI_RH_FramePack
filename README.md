@@ -15,7 +15,7 @@ This is a simple implementation of https://github.com/lllyasviel/FramePack. If t
 - The entire workflow requires no parameter adjustments, making it extremely user-friendly.  
 
 ## Model Configuration in the `models` Directory
-
+- **国内用户网盘下载**:  [汤团猪整合包] (https://pan.baidu.com/s/18KM-yPJL-nRhHBRjPpR_PQ?pwd=rx89) 
 ### 1. HunyuanVideo Model
 - **Local Path**: `/workspace/comfyui/models/HunyuanVideo`
 - **Download Source**: [HunyuanVideo on HuggingFace](https://huggingface.co/hunyuanvideo-community/HunyuanVideo/tree/main)

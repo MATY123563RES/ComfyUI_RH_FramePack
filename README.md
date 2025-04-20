@@ -19,7 +19,17 @@ This is a simple implementation of https://github.com/lllyasviel/FramePack. If t
 ### 1. HunyuanVideo Model
 - **Local Path**: `/workspace/comfyui/models/HunyuanVideo`
 - **Download Source**: [HunyuanVideo on HuggingFace](https://huggingface.co/hunyuanvideo-community/HunyuanVideo/tree/main)
+```
+Python one click download
+from huggingface_hub import snapshot_download
 
+snapshot_download(
+    repo_id="hunyuanvideo-community/HunyuanVideo",
+    local_dir="HunyuanVideo",
+    ignore_patterns=["transformer/*", "*.git*", "*.log*", "*.md"],
+    local_dir_use_symlinks=False
+)
+```
 ### 2. Flux Redux BFL Model
 - **Local Path**: `/workspace/comfyui/models/flux_redux_bfl`
 - **Download Source**: [flux_redux_bfl on HuggingFace](https://huggingface.co/lllyasviel/flux_redux_bfl/tree/main)

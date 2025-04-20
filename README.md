@@ -114,5 +114,10 @@ comfyui/models/
       └── diffusion_pytorch_model.safetensors
 ```
 ## Example:
+
+
+https://github.com/user-attachments/assets/4378bb8c-a8f4-4f16-a835-cde976c6144e
+
+
 ![image](https://github.com/user-attachments/assets/ea936caf-c0ca-48f4-af20-64090771d382)
 

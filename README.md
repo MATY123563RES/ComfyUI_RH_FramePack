@@ -19,8 +19,9 @@ This is a simple implementation of https://github.com/lllyasviel/FramePack. If t
 ### 1. HunyuanVideo Model
 - **Local Path**: `/workspace/comfyui/models/HunyuanVideo`
 - **Download Source**: [HunyuanVideo on HuggingFace](https://huggingface.co/hunyuanvideo-community/HunyuanVideo/tree/main)
-```
-Python one click download
+
+- **One-Click Download Script**:
+```python
 from huggingface_hub import snapshot_download
 
 snapshot_download(

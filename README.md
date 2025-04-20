@@ -1,4 +1,6 @@
 # FramePack for ComfyUI
+20250421 Update: Added support for first/last frame image-to-video generation from TTPlanetPig  
+[TTPlanetPig](https://github.com/TTPlanetPig) https://github.com/lllyasviel/FramePack/pull/167 
 
 ## Online Access
 You can access RunningHub online to use this plugin and models for free:

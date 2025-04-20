@@ -16,45 +16,50 @@ This is a simple implementation of https://github.com/lllyasviel/FramePack. If t
 - Better automatic adaptation for 24GB GPUs, enabling higher resolution processing whenever possible.  
 - The entire workflow requires no parameter adjustments, making it extremely user-friendly.  
 
-## Model Configuration in the `models` Directory
-- **国内用户网盘下载**:  [汤团猪大佬的模型整合包，解压密码 TTPlanet ] (https://pan.baidu.com/s/18KM-yPJL-nRhHBRjPpR_PQ?pwd=rx89)
-## **One-Click Download Script**:
-```python
-from huggingface_hub import snapshot_download
 
-# Download HunyuanVideo
-snapshot_download(
-    repo_id="hunyuanvideo-community/HunyuanVideo",
-    local_dir="HunyuanVideo",
-    ignore_patterns=["transformer/*", "*.git*", "*.log*", "*.md"],
-    local_dir_use_symlinks=False
-)
 
-# Download flux_redux_bfl
-snapshot_download(
-    repo_id="lllyasviel/flux_redux_bfl",
-    local_dir="flux_redux_bfl",
-    ignore_patterns=["*.git*", "*.log*", "*.md"],
-    local_dir_use_symlinks=False
-)
 
-# Download FramePackI2V_HY
-snapshot_download(
-    repo_id="lllyasviel/FramePackI2V_HY",
-    local_dir="FramePackI2V_HY",
-    ignore_patterns=["*.git*", "*.log*", "*.md"],
-    local_dir_use_symlinks=False
-)
-```
-### 1. HunyuanVideo Model
-- **Local Path**: `/workspace/comfyui/models/HunyuanVideo`
-- **Download Source**: [HunyuanVideo on HuggingFace](https://huggingface.co/hunyuanvideo-community/HunyuanVideo/tree/main)
-### 2. Flux Redux BFL Model
-- **Local Path**: `/workspace/comfyui/models/flux_redux_bfl`
-- **Download Source**: [flux_redux_bfl on HuggingFace](https://huggingface.co/lllyasviel/flux_redux_bfl/tree/main)
-### 3. FramePackI2V Model
-- **Local Path**: `/workspace/comfyui/models/FramePackI2V_HY`
-- **Download Source**: [FramePackI2V_HY on HuggingFace](https://huggingface.co/lllyasviel/FramePackI2V_HY/tree/main)
+# Model Download Guide
+
+## Choose a Download Method (Pick One)
+
+1. **Download via Cloud Storage (for users in China)**
+   - [汤团猪大佬的模型整合包，解压密码 TTPlanet ] (https://pan.baidu.com/s/18KM-yPJL-nRhHBRjPpR_PQ?pwd=rx89)
+   - Extraction password: TTPlanet
+2. **One-Click Download with Python Script**
+   ```python
+   from huggingface_hub import snapshot_download
+
+   # Download HunyuanVideo model
+   snapshot_download(
+       repo_id="hunyuanvideo-community/HunyuanVideo",
+       local_dir="HunyuanVideo",
+       ignore_patterns=["transformer/*", "*.git*", "*.log*", "*.md"],
+       local_dir_use_symlinks=False
+   )
+
+   # Download flux_redux_bfl model
+   snapshot_download(
+       repo_id="lllyasviel/flux_redux_bfl",
+       local_dir="flux_redux_bfl",
+       ignore_patterns=["*.git*", "*.log*", "*.md"],
+       local_dir_use_symlinks=False
+   )
+
+   # Download FramePackI2V_HY model
+   snapshot_download(
+       repo_id="lllyasviel/FramePackI2V_HY",
+       local_dir="FramePackI2V_HY",
+       ignore_patterns=["*.git*", "*.log*", "*.md"],
+       local_dir_use_symlinks=False
+   )
+
+3. **Manual Download**
+   - HunyuanVideo: [HuggingFace Link](https://huggingface.co/hunyuanvideo-community/HunyuanVideo/tree/main)
+   - Flux Redux BFL: [HuggingFace Link](https://huggingface.co/lllyasviel/flux_redux_bfl/tree/main)
+   - FramePackI2V: [HuggingFace Link](https://huggingface.co/lllyasviel/FramePackI2V_HY/tree/main)
+
+4. **File Structure After Download**
 ```
 comfyui/models/
   flux_redux_bfl

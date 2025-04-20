@@ -34,7 +34,17 @@ snapshot_download(
 ### 2. Flux Redux BFL Model
 - **Local Path**: `/workspace/comfyui/models/flux_redux_bfl`
 - **Download Source**: [flux_redux_bfl on HuggingFace](https://huggingface.co/lllyasviel/flux_redux_bfl/tree/main)
+- **One-Click Download Script**:
+```python
+from huggingface_hub import snapshot_download
 
+snapshot_download(
+    repo_id="lllyasviel/flux_redux_bfl",
+    local_dir="flux_redux_bfl",
+    ignore_patterns=["*.git*", "*.log*", "*.md"],
+    local_dir_use_symlinks=False
+)
+```
 ### 3. FramePackI2V Model
 - **Local Path**: `/workspace/comfyui/models/FramePackI2V_HY`
 - **Download Source**: [FramePackI2V_HY on HuggingFace](https://huggingface.co/lllyasviel/FramePackI2V_HY/tree/main)

@@ -105,15 +105,6 @@ comfyui/models/
   │   ├── special_tokens_map.json
   │   ├── tokenizer_config.json
   │   └── vocab.json
-  ├── transformer
-  │   ├── config.json
-  │   ├── diffusion_pytorch_model-00001-of-00006.safetensors
-  │   ├── diffusion_pytorch_model-00002-of-00006.safetensors
-  │   ├── diffusion_pytorch_model-00003-of-00006.safetensors
-  │   ├── diffusion_pytorch_model-00004-of-00006.safetensors
-  │   ├── diffusion_pytorch_model-00005-of-00006.safetensors
-  │   ├── diffusion_pytorch_model-00006-of-00006.safetensors
-  │   └── diffusion_pytorch_model.safetensors.index.json
   └── vae
       ├── config.json
       └── diffusion_pytorch_model.safetensors

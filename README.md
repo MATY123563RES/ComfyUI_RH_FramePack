@@ -24,7 +24,7 @@ This is a simple implementation of https://github.com/lllyasviel/FramePack. If t
 ## Choose a Download Method (Pick One)
 
 1. **Download via Cloud Storage (for users in China)**
-   - [T8整合模型包] (https://pan.quark.cn/s/9669ce6c7356)
+   - [T8模型包] (https://pan.quark.cn/s/9669ce6c7356)
 2. **One-Click Download with Python Script**
    ```python
    from huggingface_hub import snapshot_download

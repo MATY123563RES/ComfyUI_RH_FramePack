@@ -24,8 +24,7 @@ This is a simple implementation of https://github.com/lllyasviel/FramePack. If t
 ## Choose a Download Method (Pick One)
 
 1. **Download via Cloud Storage (for users in China)**
-   - [汤团猪大佬的模型整合包，解压密码 TTPlanet ] (https://pan.baidu.com/s/18KM-yPJL-nRhHBRjPpR_PQ?pwd=rx89)
-   - Extraction password: TTPlanet
+   - [T8整合模型包] (https://pan.quark.cn/s/9669ce6c7356)
 2. **One-Click Download with Python Script**
    ```python
    from huggingface_hub import snapshot_download

